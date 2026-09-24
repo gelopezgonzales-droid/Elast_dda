@@ -32,7 +32,7 @@
         .academic-box { background: var(--surface-card); border: 1px solid var(--border-strong); border-left: 4px solid var(--demand-color); border-radius: 8px; padding: 0.65rem 1rem; box-shadow: var(--shadow-sm); min-width: 320px; }
         .academic-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; color: var(--text-light); }
         .academic-course { font-size: 0.88rem; font-weight: 700; margin-top: 2px;}
-        .academic-program { font-size: 0.74rem; color: var(--text-muted); font-weight: 500; }
+        .academic-program, .author { font-size: 0.74rem; color: var(--text-muted); font-weight: 500; }
         .header-title-container { text-align: right; }
         .header-title-container h1 { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em; }
         .header-title-container h1 span { color: var(--demand-color); }
@@ -81,8 +81,9 @@
         <div class="academic-box">
             <div class="academic-tag">Material Académico</div>
             <div class="academic-course">Análisis Económico de los Impuestos</div>
-            <div class="academic-program">Maestría en Tributación y Política Fiscal &bull; 2026-2</div>
-        </div>
+            <div class="academic-program">Maestria en Tributación y Política Fiscal &bull; <span>2026-2</span></div>
+<div class="author">ge.lopezgonzales@gmail.com</div>
+</div>
         <div class="header-title-container">
             <h1>Elasticidad de la <span>Demanda</span></h1>
             <p>Relación entre variaciones de precio, la cantidad y el Ingreso Total</p>
@@ -96,7 +97,7 @@
                 <div class="section-header">Sensibilidad del Consumidor</div>
                 <div class="control-group">
                     <div class="control-header">
-                        <label>Coeficiente de Elasticidad</label>
+                        <label>Coeficiente de Elasticidad </label>
                         <span class="val-badge" id="val-elasticity">1.0</span>
                     </div>
                     <input type="range" id="elasticity" min="0" max="3" step="0.1" value="1.0">
@@ -104,7 +105,7 @@
                         <span>Perfect. Inelástica (0)</span>
                         <span>Elástica (>1)</span>
                     </div>
-                    <span class="slider-desc">Mide qué tan sensible es la cantidad demandada ante un cambio en el precio. Pivota sobre un anclaje inicial (P₀, Q₀).</span>
+                    <span class="slider-desc">Mide qué tan sensible es la cantidad demandada ante un cambio en el precio. Pivota sobre un anclaje inicial ($P_0, Q_0$).</span>
                 </div>
             </div>
 
@@ -112,7 +113,7 @@
                 <div class="section-header">Decisión de Pricing</div>
                 <div class="control-group">
                     <div class="control-header">
-                        <label>Nuevo Precio (P₁)</label>
+                        <label>Nuevo Precio ($P_1$)</label>
                         <span class="val-badge" id="val-price">$12.00</span>
                     </div>
                     <input type="range" id="price" min="4" max="16" step="0.5" value="12">
@@ -135,9 +136,9 @@
         <div class="visual-card">
             <div class="legend">
                 <div class="legend-item"><div class="dot" style="background: var(--demand-color); height:3px;" id="leg-curve"></div> Curva de Demanda</div>
-                <div class="legend-item"><div class="dot" style="background: #94a3b8; border-radius: 50%;"></div> Punto Ancla (P₀)</div>
-                <div class="legend-item"><div class="dot" style="background: var(--demand-color); border-radius: 50%;" id="leg-pt"></div> Nuevo Punto (P₁)</div>
-                <div class="legend-item"><div class="dot" style="background: var(--demand-light); border: 1px solid var(--demand-color);" id="leg-rev"></div> Ingreso Total (P×Q)</div>
+                <div class="legend-item"><div class="dot" style="background: #94a3b8; border-radius: 50%;"></div> Punto Ancla ($P_0$)</div>
+                <div class="legend-item"><div class="dot" style="background: var(--demand-color); border-radius: 50%;" id="leg-pt"></div> Nuevo Punto ($P_1$)</div>
+                <div class="legend-item"><div class="dot" style="background: var(--demand-light); border: 1px solid var(--demand-color);" id="leg-rev"></div> Ingreso Total(P×Q)</div>
             </div>
 
             <div class="canvas-container" id="canvasBox">
@@ -146,7 +147,7 @@
 
             <div class="stats-grid">
                 <div class="stat-box">
-                    <div class="stat-title">Elasticidad (|Ed|)</div>
+                    <div class="stat-title">Elasticidad ($\vert{}E_d\vert{}$)</div>
                     <div class="stat-val" id="stat-e">1.00</div>
                     <div class="badge-type" id="stat-type">Unitaria</div>
                 </div>
